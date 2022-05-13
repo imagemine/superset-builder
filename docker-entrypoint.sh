@@ -20,7 +20,10 @@ set -eo pipefail
 if [[ -d /opt/superset/certs ]];
 then
   echo updating certificate chain
-  cp /opt/superset/certs/*.crt /usr/local/share/ca-certificates/
+  for f in $(ls /opt/superset/certs/|grep crt);
+  do
+    cp /opt/superset/certs/${f} /usr/local/share/ca-certificates/
+  done;
   update-ca-certificates
 fi;
 
