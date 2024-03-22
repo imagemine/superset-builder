@@ -15,6 +15,7 @@ RUN pip install 'urllib3==1.26.18' --force-reinstall
 RUN pip install 'gevent==23.9.0' --force-reinstall
 RUN pip install 'cryptography==41.0.6' --force-reinstall
 RUN pip install 'Pillow==10.2.0' --force-reinstall
+RUN python3.9 -m pip install 'Pillow==10.2.0' --force-reinstall
 
 RUN chown -R superset /usr/local/share/ca-certificates/ && \
     chown -R superset /etc/ssl/certs && \
