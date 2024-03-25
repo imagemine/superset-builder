@@ -19,8 +19,6 @@ RUN pip uninstall -y cryptography
 RUN python3.9 -m pip install --upgrade --target=/usr/local/lib/python3.9/site-packages/ Pillow==10.2.0
 RUN python3.9 -m pip install --upgrade --target=/usr/local/lib/python3.9/site-packages/ cryptography==42.0.2
 
-RUN pip install 'cryptography==42.0.2'
-
 RUN chown -R superset /usr/local/share/ca-certificates/ && \
     chown -R superset /etc/ssl/certs && \
     chown -R superset /usr/share/ca-certificates && \
