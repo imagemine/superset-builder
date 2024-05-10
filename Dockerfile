@@ -1,4 +1,4 @@
-FROM apache/superset:3.1.0-dev
+FROM apache/superset:3.1.3-dev
 
 USER root
 
@@ -13,7 +13,7 @@ RUN pip install 'werkzeug==2.3.8' --force-reinstall
 RUN pip install 'paramiko==3.4.0' --force-reinstall
 RUN pip install 'urllib3==1.26.18' --force-reinstall
 RUN pip install 'gevent==23.9.0' --force-reinstall
-RUN pip install 'cryptography==41.0.6' --force-reinstall
+
 RUN pip uninstall -y Pillow
 
 RUN python3.9 -m pip install --upgrade --target=/usr/local/lib/python3.9/site-packages/ Pillow==10.2.0
